@@ -1,26 +1,17 @@
 <template>
-  <div id="app">
-    <app-toolbar></app-toolbar>
-      <router-view/>
-    <app-footer style="position:absolute;z-index:-1"></app-footer>
-  </div>
+  <v-app
+    id="app"
+  >
+    <app-navbar></app-navbar>
+    <router-view/>
+    <!-- Div Content -->
+  </v-app>
 </template>
 
 <script>
-import AppToolbar from './components/AppToolbar'
-import AppFooter from './components/AppFooter'
+import AppNavbar from './components/master/AppNavbar'
 export default {
   name: 'App',
-  components: {AppToolbar, AppFooter}
+  components: {AppNavbar},
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>

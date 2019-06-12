@@ -10,10 +10,9 @@
         <span>6</span>
       </template>
       <v-icon
-        large
         color="grey lighten-1"
       >
-        shopping_cart
+        fa fa-bell
       </v-icon>
     </v-badge>
     <div class="hidden-sm-and-down">
@@ -64,6 +63,7 @@
           <v-list-tile
             v-for="item in items"
             :key="item.title"
+            @click="coba"
           >
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
