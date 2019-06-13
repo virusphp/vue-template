@@ -12,6 +12,6 @@
 import AppNavbar from './components/master/AppNavbar'
 export default {
   name: 'App',
-  components: {AppNavbar},
+  components: {AppNavbar}
 }
 </script>

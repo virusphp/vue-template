@@ -7,13 +7,13 @@
             <v-container grid-list-lg>
               <v-layout row wrap>
                 <v-flex
-                  v-for="card in cards"
-                  :key="card.title"
-                  v-bind="{ [`xs${card.flex}`]: true }"
+                  v-for="(item, index) in posts"
+                  :key="index"
+                  v-bind="{ [`xs4`]: true }"
                 >
                   <v-card>
                     <v-img
-                      :src="card.src"
+                      :src="item.image"
                       height="200px"
                     >
                       <v-container
@@ -23,17 +23,15 @@
                       >
                         <v-layout fill-height>
                           <v-flex xs12 align-end flexbox>
-                            <span class="headline white--text" v-text="card.title"></span>
+                            <span class="headline white--text" v-text="item.nama_pegawai"></span>
                           </v-flex>
                         </v-layout>
                       </v-container>
                     </v-img>
                   </v-card>
                 </v-flex>  
-                  <p v-for="(item, index) in posts" :key="index">{{item.nama_pegawai}}</p>
               </v-layout>
             </v-container>
-            
           <!-- </v-card> -->
         </v-flex>
       </v-layout>
@@ -41,7 +39,6 @@
     
   </v-content>
 </template>
-
 <script>
 import {mapState} from 'vuex'
   export default {
@@ -59,7 +56,13 @@ import {mapState} from 'vuex'
     computed: {
       ...mapState([
         'posts' 
-      ])
+      ]),
+      dataUrl(blob) {
+        return 'data:image/jpeg;base64,' +btoa(
+          new Uint8Array(blob)
+          .reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+      }
     }
   }
 </script>

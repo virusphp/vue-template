@@ -65,7 +65,8 @@
       items: [
         { icon: 'card_membership', text: 'Pembuatan Sep', link: '/pembuatan/sep'},
         { icon: 'hotel', text: 'Management Bed', link: '/atur/bed' },
-        { icon: 'settings', text: 'Management User', link: '/atur/user' }
+        { icon: 'settings', text: 'Management User', link: '/atur/user' },
+        { icon: 'settings', text: 'Management Pegawai', link: '/atur/pegawai' }
       ]
     }),
     props: {
